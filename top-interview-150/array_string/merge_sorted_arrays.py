@@ -1,0 +1,29 @@
+def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+    """
+    Do not return anything, modify nums1 in-place instead.
+    """
+
+    i = j = 0
+    merged = []
+
+    while i < m and j < n:
+        if nums1[i] <= nums2[j]:
+            merged.append(nums1[i])
+            i += 1
+        else:
+            merged.append(nums2[j])
+            j += 1
+
+    while i < m:
+        merged.append(nums1[i])
+        i += 1
+
+    while j < n:
+        merged.append(nums2[j])
+        j += 1
+
+    for i in range(len(merged)):
+        nums1[i] = merged[i]
+
+
+merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
