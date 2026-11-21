@@ -7,5 +7,6 @@ def bubble_sort(arr):
                 arr[j + 1] = temp
     return arr
 
+
 sorted = bubble_sort([4, 5, 1, 2, 10])
 print(sorted)
